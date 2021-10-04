@@ -1,0 +1,133 @@
+:root{
+    --color1: rgb(240, 128, 128);
+}
+
+.temporizador{
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    
+}
+.barra{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#pomodoro{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 900;
+    font-size: 2em;
+    color: rgb(133, 193, 233);
+}
+
+#pomodoro-temporizador{
+    display: flex;
+	align-items: center;
+	justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.5em;
+    position: absolute;
+    color: rgb(133, 193, 233);
+}
+
+span{
+    display:none;
+}
+
+.palabra{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.progreso{
+    fill: none;
+    stroke-width: 10;
+    stroke: var(--color1);
+    stroke-dasharray: 630;
+    stroke-dashoffset: 630;
+    transform: rotate(-90deg);
+    transform-origin: center;
+    stroke-linecap: round;
+}
+.progreso2{
+    fill: none;
+    stroke: rgb(233,233,233);
+    stroke-width: 10;
+
+}
+
+.botones{
+    display: flex;
+	align-items: center;
+	justify-content: center;
+    margin-top: 4%;
+    padding-bottom: 10%;
+   
+}
+
+.Inicio{
+    display: flex;
+	align-items: center;
+	justify-content: center;
+    width: 10%;
+    border-radius: 20px;
+    background-color:rgb(26, 188, 156);
+    border: 2px solid rgb(26, 188, 156);
+    color:#fff; 
+    margin-right: 1%;
+    font-size: 1.5em;
+    padding: 0.8%;
+    
+}
+
+.Inicio:hover{
+    background: rgba(26, 188, 156,0.8);
+}
+.Pausa{
+    display: flex;
+	align-items: center;
+	justify-content: center;
+    width: 10%;
+    border-radius: 20px;
+    background-color:rgb(255, 87, 51);
+    border: 2px solid rgb(255, 87, 51);
+    color: #fff;
+    margin-right: 1%;
+    font-size: 1.5em;
+    padding: 0.8%;
+}
+.Pausa:hover{
+    background: rgba(255, 87, 51,0.8);
+}
+
+.Reiniciar{
+    display: flex;
+	align-items: center;
+	justify-content: center;
+    width: 10%;
+    border-radius: 20px;
+    background-color:rgb(52, 152, 219);
+    border: 2px solid rgb(52, 152, 219);
+    color: #fff;;
+    margin-right: 1%;
+    font-size: 1.5em;
+    padding: 0.8%;
+}
+
+.Reiniciar:hover{
+    background: rgba(52, 152, 219,0.8);
+}
+
+@media (max-width: 900px){
+    span{
+        display:flex;
+    }
+    .palabra{
+        display:none;
+    }
+}
