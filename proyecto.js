@@ -18,7 +18,7 @@ let cantidad2 = 630;
 
 var personalizar=prompt("El tiempo normal del metodo de pomodoro es de 25 minutos de trabajo, si desea modificarlo ingrese el numero de minutos, si no solo tecle 25");
 personalizar= parseInt(personalizar);
-pm.innerText=personalizar;
+pm.innerText=personalizar; // Funcion de personalizacion solo de temporizaor de trabajo//
 
 
 
