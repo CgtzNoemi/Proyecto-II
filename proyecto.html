@@ -4,55 +4,117 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE-edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>TemPoro</title>
+	<title>Temporo</title>
 	<link rel="stylesheet" href="estilo.css">
 </head>
 <body >
 
-    <div class="temporizador">
-        <div class="caja_Texto2">
-            <input class="entrada" type="text" id="InputText"  readonly="readonly" placeholder="Nombre de la tarea...">
-            <label for="botonMenu" class="cambio">&#9776</label>
-        </div>
-        <div id="rondas">
-            <p id="rounds">Round:</p> <p id="round">0</p>
-            <p id="rounds">Tarea:</p> <p id="cycle">0</p>
-        </div>
+    <main>
+        
+        
+            <a href="proyecto.html"> <img src="img/Logo Temporo.png" alt="Tiemporo"></a>
+       
+        
+        <div class="temporizador">
+            
+
+            <div class="superior">
+                
+                <div class="caja_Texto2">
+                    <input class="entrada" type="text" id="InputText"  readonly="readonly" placeholder="Nombre de la tarea...">
+                    <label for="botonMenu" class="cambio">&#9776</label>
+                </div>
+
+            </div>
+        
 
 
-        <div class="barra">
-            <svg width="250" height="250">
-                <circle r="100" cx="125" cy="125" class="progreso2"></circle>
-                <circle r="100" cx="125" cy="125" class="progreso" id="progreso"></circle>
-            </svg>
-
-            <div id="pomodoro-temporizador">
-
-                <p id="pmin">25</p><p>:</p><p id="pseg">00</p>  
+            <div id="rondas">
+                <p id="rounds">Round:</p> <p id="round">0</p>
+                <p id="rounds">Tarea:</p> <p id="cycle">0</p>
+            </div>
     
+    
+            <div class="barra">
+                <svg width="250" height="250">
+                    <circle r="100" cx="125" cy="125" class="progreso2"></circle>
+                    <circle r="100" cx="125" cy="125" class="progreso" id="progreso"></circle>
+                </svg>
+    
+                <div id="pomodoro-temporizador">
+    
+                    <p id="pmin">25</p><p>:</p><p id="pseg">00</p>  
+        
+                </div>
+                <div id= "Break_timer">
+                    <p id="dmin"></p><p>:</p><p id ="dseg"></p>
+                </div>
             </div>
-            <div id= "Break_timer">
-                <p id="dmin"></p><p>:</p><p id ="dseg"></p>
-            </div>
+    
+    
+        </div>
+    
+    
+        <div class="botones">
+            <button id="start"  class="Inicio" onclick="empezar()"><p class="palabra">Inicio</p></button>
+            <button id="pause"  class="Pausa" onclick="parar()"><p class="palabra">Parar</p></button>
+            <button id="reset"  class="Reiniciar" onclick="restart()"><p class="palabra">Reinicio</p></button>
+            
         </div>
 
-
-    </div>
-    <div class="botones">
-		<button id="start"  class="Inicio" onclick="empezar()"><p class="palabra">Inicio</p><span>&#9658</span></button>
-		<button id="pause"  class="Pausa" onclick="parar()"><p class="palabra">Parar</p><span>&#10074&#10074</span></button>
-		<button id="reset"  class="Reiniciar" onclick="restart()"><p class="palabra">Reinicio</p><span>&#8634</span></button>
-	</div>
-
-    <div class="modal-container">
-		<div class="modal modal-close" id="caja_Texto">
-            <p class="close">X</p>
-            <h2>Nombre de la tarea</h2>
-            <input type="text" id="InputText2" placeholder="Tarea...">
-            <input type="button" id="botonTexto" onclick="enviarTexto()" class="addBtn" value="Añadir"></input>
+        <div class="instrucciones">
+            <button id="abrir"> Instrucciones de uso</button>
         </div>
-	</div>
+    
+       
+    
+        <div class="modal-container">
 
+            <div class="modal modal-close" id="caja_Texto">
+                <p class="close">X</p>
+                <h2>Nombre de la tarea</h2>
+                <input type="text" id="InputText2" placeholder="Tarea...">
+                <input type="button" id="botonTexto" onclick="enviarTexto()" class="addBtn" value="Añadir"></input>
+            </div>
+            
+        </div>
+
+    </main>
+
+   
+      
+      <div id="contenedor" class="contenedor-modal">
+        <div class="trip">
+          <h1>Instrucciones </h1>
+          <p>
+            Temporo es un temporizador que nos permite concentranos para realizar tareas especificas y mejorar nuestra productividad
+            ya sea para estudiar, trabajar o hacer coding. 
+          </p>
+          <h2>1.</h2>
+          <p>
+            Presiona INICIO para iniciar con la cuenta regresiva de 25 minutos y espera el sonido para finalizar. Una ves finalizado tendras un descanso corto de 5 minutos
+            
+          </p>
+          <h2>2.</h2>
+          <p>Se establecerá el tiempo estándar de la técnica para los descansos largos de 20 minutos cada 4 pomodoros.
+        
+            
+          </p>
+          <button id="cerrar">Cerrar</button>
+        </div>
+      </div>
+
+   
+      
+      <footer id="contact">
+
+        <h2>Equipo Temporo</h2>
+       
+        <p>Alejandro Salinas Ramirez</p>
+        <p>Eric Ehecatl Hernandez Torres</p>
+        <p>Vanessa Noemi Gutierrez Campos</p> 
+   
+      </footer>
     
 	
 	<script src="proyecto.js"></script>
