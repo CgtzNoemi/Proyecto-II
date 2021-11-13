@@ -109,9 +109,7 @@ if(counter.innerText==1 && cycles.innerText== 1) {
 
     }
 
-    if(ronda==1){
-        x=personalizar;
-    }else if(ronda%2==0){
+    if(ronda%2==0){
         if(ronda==8){
             x=20; 
             document.getElementById("pomodoro-temporizador").style.display = "none";
@@ -122,6 +120,10 @@ if(counter.innerText==1 && cycles.innerText== 1) {
             document.getElementById("pomodoro-temporizador").style.display = "none";
             document.getElementById("Break_timer").style.display = "flex";
         }
+    }else if(ronda==1){
+        x=personalizar;
+        document.getElementById("pomodoro-temporizador").style.display = "flex";
+        document.getElementById("Break_timer").style.display = "none";
     }else{
             x=25;
             document.getElementById("pomodoro-temporizador").style.display = "flex";
@@ -156,6 +158,9 @@ function restart(){
     cantidad1 = 0;
     cantidad2 = 630;
     progreso.style.strokeDashoffset=630;
+    
+    document.getElementById("pomodoro-temporizador").style.display = "flex";
+    document.getElementById("Break_timer").style.display = "none";
  
     clearInterval(iniciar_temporizador);
     iniciar_temporizador = undefined;
