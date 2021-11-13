@@ -52,9 +52,11 @@ function temporizador(){
 }
     if(pm.innerText == 0 && ps.innerText == 1){
         ronda++;
+        cantidad2-=(630/(x*60))
     }
     if(dm.innerText == 0 && ds.innerText == 1){
         ronda++;
+        cantidad2-=(630/(x*60))
     }
  
 //Contador de rounds 
