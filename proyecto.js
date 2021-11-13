@@ -9,54 +9,73 @@ var ds = document.getElementById ('dseg');
 var counter= document.getElementById('round');
 var cycles= document.getElementById('cycle');
 var iniciar_temporizador;
-var x=25; 
 let times=[25,5,20,0]
 
 const progreso = document.getElementById('progreso');
 let cantidad1 = 0;
 let cantidad2 = 630;
-
+var ronda=1;
 
 var personalizar=prompt("El tiempo normal del metodo de pomodoro es de 25 minutos de trabajo, si desea modificarlo ingrese el numero de minutos, si no solo tecle 25");
 personalizar= parseInt(personalizar);
 pm.innerText=personalizar; // Funcion de personalizacion solo de temporizaor de trabajo//
+var x=personalizar; 
 
 
 function temporizador(){
 //Temporizador de tarea
+
+
     if(ps.innerText != 0){
         ps.innerText--;
+        if(ps.innerText<10){
+            ps.innerText = '0'+ps.innerText;
+        }
     }else if(pm.innerText != 0 && ps.innerText == 0){
         ps.innerText = 59;
         pm.innerText--; //<<<Funcion decremento de minutos 
     }
+ 
     //Short break
     if(pm.innerText == 0 && ps.innerText == 0){
-        
+ 
         if (ds.innerText != 0){
             ds.innerText--;
-        }else if(dm.innerText != 0 && ds.innerText == 0){
+            if(ds.innerText<10){
+                ds.innerText = '0'+ds.innerText;
+            }
+        }else if(dm.innerText != 0 && ds.innerText == 0){ 
             ds.innerText = 59;
             dm.innerText--;
-
     }
-}
 
+}
+    if(pm.innerText == 0 && ps.innerText == 1){
+        ronda++;
+        cantidad2=0;
+    }
+    if(dm.innerText == 0 && ds.innerText == 1){
+        ronda++;
+        cantidad2=0;
+    }
+ 
 //Contador de rounds 
 if(pm.innerText ==0 && ps.innerText == 0 && dm.innerText == 0 && ds.innerText == 0){
     pm.innerText =times[0];
     ps.innerText =times[3];
 
-    dm.innerText= times[1];
+    dm.innerText=times[1];
     ds.innerText=times[3];
 
     document.getElementById('round').innerText++;
+ 
 //Long break 
 }else if(counter.innerText ==4){
     alert("Hora de un Long BREAK");
+    
     pm.innerText= times[3];
     ps.innerText= times[3];
-    dm.innerText= times[2];
+    dm.innerText=times[2];
     ds.innerText=times[3];
     counter.innerText= times[3];
     document.getElementById('cycle').innerText++
@@ -79,12 +98,41 @@ if(counter.innerText==1 && cycles.innerText== 1) {
     let valor = Math.ceil(cantidad2-=(630/(x*60)))
     progreso.style.strokeDashoffset=valor;
 
-    if(cantidad2 === (0)){
-      restart();
-      const music = new Audio('sonido.mp3');
-    music.play();
+    if(pm.innerText == 0 && ps.innerText == 1 || dm.innerText == 0 && ds.innerText == 1){
+            const music = new Audio('sonido.mp3');
+            music.play();
+
     }
-    
+
+    if(cantidad2==0){
+        cantidad1 = 0;
+        cantidad2 = 630;
+        progreso.style.strokeDashoffset=630;
+
+    }
+
+    if(ronda==1){
+        x=personalizar;
+    }else if(ronda%2==0){
+        if(ronda==8){
+            x=20; 
+            document.getElementById("pomodoro-temporizador").style.display = "none";
+            document.getElementById("Break_timer").style.display = "flex";
+              
+        }else{
+            x=5; 
+            document.getElementById("pomodoro-temporizador").style.display = "none";
+            document.getElementById("Break_timer").style.display = "flex";
+        }
+    }else{
+            x=25;
+            document.getElementById("pomodoro-temporizador").style.display = "flex";
+            document.getElementById("Break_timer").style.display = "none";
+
+    }
+
+
+
 }
 
 
@@ -102,10 +150,10 @@ function empezar(){
 
 function restart(){
     pm.innerText =times[0];
-    ps.innerText =times[3];
+    ps.innerText ='0'+times[3];
 
     dm.innerText= times[1];
-    ds.innerText=times[3];
+    ds.innerText='0'+times[3];
 
     cantidad1 = 0;
     cantidad2 = 630;
@@ -113,6 +161,8 @@ function restart(){
  
     clearInterval(iniciar_temporizador);
     iniciar_temporizador = undefined;
+    document.getElementById("pomodoro-temporizador").style.display = "flex";
+    document.getElementById("Break_timer").style.display = "none";
 }
 
 function parar(){
