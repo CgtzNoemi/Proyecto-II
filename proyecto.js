@@ -9,7 +9,7 @@ var ds = document.getElementById ('dseg');
 var counter= document.getElementById('round');
 var cycles= document.getElementById('cycle');
 var iniciar_temporizador;
-let times=[25,5,20,0]
+let times=[25,5,20,0];
 
 const progreso = document.getElementById('progreso');
 let cantidad1 = 0;
@@ -159,8 +159,6 @@ function restart(){
  
     clearInterval(iniciar_temporizador);
     iniciar_temporizador = undefined;
-    document.getElementById("pomodoro-temporizador").style.display = "flex";
-    document.getElementById("Break_timer").style.display = "none";
 }
 
 function parar(){
