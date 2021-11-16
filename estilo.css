@@ -97,11 +97,11 @@ span{
     fill: none;
     stroke-width: 10;
     stroke: var(--color1);
-    stroke-dasharray: 630;
-    stroke-dashoffset: 630;
+    stroke-dasharray: 629;
+    stroke-dashoffset: 629;
     transform: rotate(-90deg);
     transform-origin: center;
-    stroke-linecap:square;
+    stroke-linecap:round;
 }
 .progreso2{
     fill: none;
