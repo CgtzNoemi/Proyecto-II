@@ -81,7 +81,7 @@ if(pm.innerText ==0 && ps.innerText == 0 && dm.innerText == 0 && ds.innerText ==
 //Long break 
 }else if(counter.innerText==4){
     alert("Hora de un Long BREAK");
-    
+    ronda=8;
     pm.innerText= times[3];
     ps.innerText= `0${times[3]}`;
     dm.innerText=times[2];
