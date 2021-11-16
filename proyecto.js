@@ -117,6 +117,7 @@ if(counter.innerText==1 && cycles.innerText== 1) {
     if(ronda%2==0){
         if(ronda==8){
             x=times[2]; 
+            dm.innerText=times[2];
             document.getElementById("pomodoro-temporizador").style.display = "none";
             document.getElementById("Break_timer").style.display = "flex";
               
